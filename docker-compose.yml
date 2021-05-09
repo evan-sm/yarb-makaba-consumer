@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+    yarb-makaba-consumer:
+        build: .
+        restart: always
+        env_file:
+            - ./.env
+        ports:
+          - 8060:8060
