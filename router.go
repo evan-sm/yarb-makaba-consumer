@@ -32,7 +32,7 @@ func handlePost(c *gin.Context) {
 	}
 
 	// Post in thread we found earlier
-	num, err = makaba.Post().Board(p.Board).Thread(num).Name(p.Person).Subject(p.Person).Comment(p.Caption).File(p.Files).Do(Passcode)
+	num, err = makaba.Post().Board(p.Board).Thread(num).Subject(p.Person).Comment(p.Caption).File(p.Files).Do(Passcode)
 	if err != nil {
 		log.Println(err)
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
